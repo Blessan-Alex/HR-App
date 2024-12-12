@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors -->
+    <color name="primary_blue">#2196F3</color>
+    <color name="secondary_yellow">#FFC107</color>
+    <color name="secondary_green">#4CAF50</color>
+    <color name="secondary_purple">#9C27B0</color>
+    <color name="secondary_orange">#FF5722</color>
+
+    <!-- Neutral Colors -->
+    <color name="background_gray">#F5F5F5</color>
+    <color name="hint_gray">#9E9E9E</color>
+    <color name="text_black">#212121</color>
+    <color name="white">#FFFFFF</color>"
+    <color name="black">#000000</color>
+
+    <!-- Pastel Colors -->
+    <color name="pastel_green">#D9EDBF</color>
+    <color name="pastel_pink">#FFB996</color>
+    <color name="pastel_orange">#FFCF81</color>
+    <color name="pastel_yellow">#FDFFAB</color>"
+
+    <!-- Bottom Navigation Colors -->
+    <color name="bottom_nav_selected">#2196F3</color>
+    <color name="bottom_nav_unselected">#757575</color>
+</resources>

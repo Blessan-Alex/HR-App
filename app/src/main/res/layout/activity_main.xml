@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <!-- Top AppBar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/app_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Fox1GO"
+                    android:textColor="#FF8080"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-condensed-medium" />
+
+                <ImageButton
+                    android:id="@+id/profile_icon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_profile"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Profile"
+                    app:tint="#FF8080"/>
+
+                <ImageButton
+                    android:id="@+id/notification_bell"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_notification_bell"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Notifications"
+                    app:tint="#FF8080"
+                    />
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Main Content Area with Full Expansion -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Attendance"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- Attendance Card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/attendance_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#FF8080">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/punch_in_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Punch In"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/punch_in_timestamp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="00:00 AM"
+                            android:textSize="12sp"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/punch_out_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Punch Out"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/punch_out_timestamp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="----------"
+                            android:textSize="12sp"
+                            android:textColor="@color/white"/>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/punch_in_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Punch In"
+                        android:backgroundTint="#8ACDD7"
+                        />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Favourites Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Facilities"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Improved GridLayout with better spacing and visibility -->
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/favourites_grid"
+                android:layout_width="match_parent"
+                android:layout_height="440dp"
+                app:columnCount="2"
+                app:rowCount="4"
+                app:useDefaultMargins="true">
+
+                <!-- Buttons with full expansion and better styling -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_apply_leave"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:text="Apply Leave"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="false"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    app:iconSize="26dp"
+                    app:layout_columnWeight="1"
+                    app:icon="@drawable/ic_leave"
+                    app:backgroundTint="#8ACDD7"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_individual_performance"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:text="Performance"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="false"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    app:iconSize="26dp"
+                    app:layout_columnWeight="1"
+                    app:icon="@drawable/ic_performance"
+                    app:backgroundTint="#FFB996"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_team_chatbox"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:text="Chatbox"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="false"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    app:iconSize="26dp"
+                    app:layout_columnWeight="1"
+                    app:icon="@drawable/ic_chat"
+                    app:backgroundTint="#FFB996"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_stimulation"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:text="Stimulation"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="false"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    app:iconSize="26dp"
+                    app:layout_columnWeight="1"
+                    app:icon="@drawable/ic_game"
+                    app:backgroundTint="#8ACDD7"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_current_news"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:text="Current News"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="false"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    app:iconSize="26dp"
+                    app:layout_columnWeight="1"
+                    app:icon="@drawable/ic_news"
+                    app:backgroundTint="#8ACDD7"
+                />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_team_performance"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:text="Team Stats"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="false"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    app:iconSize="26dp"
+                    app:layout_columnWeight="1"
+                    app:icon="@drawable/ic_team"
+                    app:backgroundTint="#FFB996"
+
+                />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_location"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:text="Location"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="false"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    app:iconSize="26dp"
+                    app:layout_columnWeight="1"
+                    app:icon="@drawable/ic_location"
+                    app:backgroundTint="#FFB996"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_timesheet"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:text="Timesheet"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="false"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    app:iconSize="26dp"
+                    app:layout_columnWeight="1"
+                    app:icon="@drawable/ic_timestamp"
+                    app:backgroundTint="#8ACDD7"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_payroll_management"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:text="Payroll"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="false"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    app:iconSize="26dp"
+                    app:layout_columnWeight="1"
+                    app:icon="@drawable/ic_payroll"
+                    app:backgroundTint="#8ACDD7"/>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_peer_rating"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:text="Peer Rating"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="false"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    app:iconSize="26dp"
+                    app:layout_columnWeight="1"
+                    app:icon="@drawable/ic_rating"
+                    app:backgroundTint="#FFB996"/>
+
+
+
+
+
+            </androidx.gridlayout.widget.GridLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Optimized Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/rounded_bottom_nav"
+        app:itemIconSize="32dp"
+        app:itemTextAppearance="@style/CustomBottomNavText"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
